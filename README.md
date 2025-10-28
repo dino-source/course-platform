@@ -1,6 +1,6 @@
 # Building a Course Platform
 
-Watch the tutorial [here](https://youtu.be/I_IchaIdmnA)
+Watch the tutorial [How to Build a Course Platform](https://youtu.be/I_IchaIdmnA)
 
 ## Tech Stack
 
