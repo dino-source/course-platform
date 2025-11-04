@@ -23,14 +23,14 @@ class Course(models.Model):
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to=handle_upload, blank=True, null=True)
     status = models.CharField(
-        max_length=10,
+        max_length=16,
         choices=PublishStatus.choices,
         default=PublishStatus.DRAFT,
     )
     access = models.CharField(
-        max_length=10,
+        max_length=16,
         choices=AccessRequirements.choices,
-        default=AccessRequirements.ANYONE,
+        default=AccessRequirements.EMAIL_REQUIRED,
     )
 
     @property
