@@ -7,7 +7,7 @@ class AccessRequirements(models.TextChoices):
 
 
 class PublishStatus(models.TextChoices):
-    PUBLISHED = "pub", "Published"
+    PUBLISHED = "publish", "Published"
     COMING_SOON = "soon", "Coming soon"
     DRAFT = "draft", "Draft"
 
