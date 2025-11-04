@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class AccessRequirements(models.TextChoices):
+class AccessRequirement(models.TextChoices):
     ANYONE = "any", "Anyone"
     EMAIL_REQUIRED = "email_requred", "Email required"
 
@@ -29,8 +29,8 @@ class Course(models.Model):
     )
     access = models.CharField(
         max_length=16,
-        choices=AccessRequirements.choices,
-        default=AccessRequirements.EMAIL_REQUIRED,
+        choices=AccessRequirement.choices,
+        default=AccessRequirement.EMAIL_REQUIRED,
     )
 
     @property
