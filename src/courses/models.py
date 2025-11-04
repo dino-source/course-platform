@@ -3,7 +3,7 @@ from django.db import models
 
 class AccessRequirement(models.TextChoices):
     ANYONE = "any", "Anyone"
-    EMAIL_REQUIRED = "email_requred", "Email required"
+    EMAIL_REQUIRED = "email", "Email required"
 
 
 class PublishStatus(models.TextChoices):
