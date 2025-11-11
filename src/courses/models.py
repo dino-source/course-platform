@@ -1,13 +1,17 @@
+import cfehome.helpers as helpers
 from django.db import models
 
 
-class AccessRequirements(models.TextChoices):
+helpers.cloudinary_init()
+
+
+class AccessRequirement(models.TextChoices):
     ANYONE = "any", "Anyone"
-    EMAIL_REQUIRED = "email_requred", "Email required"
+    EMAIL_REQUIRED = "email", "Email required"
 
 
 class PublishStatus(models.TextChoices):
-    PUBLISHED = "pub", "Publish"
+    PUBLISHED = "publish", "Published"
     COMING_SOON = "soon", "Coming soon"
     DRAFT = "draft", "Draft"
 
@@ -23,14 +27,14 @@ class Course(models.Model):
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to=handle_upload, blank=True, null=True)
     status = models.CharField(
-        max_length=10,
+        max_length=16,
         choices=PublishStatus.choices,
         default=PublishStatus.DRAFT,
     )
     access = models.CharField(
-        max_length=10,
-        choices=AccessRequirements.choices,
-        default=AccessRequirements.ANYONE,
+        max_length=16,
+        choices=AccessRequirement.choices,
+        default=AccessRequirement.EMAIL_REQUIRED,
     )
 
     @property
