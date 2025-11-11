@@ -1,4 +1,8 @@
+import cfehome.helpers as helpers
 from django.db import models
+
+
+helpers.cloudinary_init()
 
 
 class AccessRequirement(models.TextChoices):
